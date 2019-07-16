@@ -1,0 +1,4 @@
+requests
+minio
+numpy
+pycuda

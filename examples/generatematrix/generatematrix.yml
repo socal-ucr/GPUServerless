@@ -1,0 +1,18 @@
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  generatematrix:
+    lang: dockerfile
+    handler: ./generatematrix
+    image: generatematrix:latest
+    runtime: nvidia
+    environment:
+      minio_hostname: "192.168.1.163:9000"
+      minio_access_key: "MB3LOLVFPMT8MLEGQ4I5"
+      minio_secret_key: "b0Aa4hgn78ls5CKpe+8sls5BrVlOB9w5eFJiNhDc"
+      write_debug: true
+      read_timeout: "500s"
+      write_timeout: "500s"
+      exec_timeout: "500s"
+      timeout_sec: "5000s"
